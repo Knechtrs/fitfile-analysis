@@ -27,3 +27,6 @@ packrat/
 
 # ---- VSCode ----
 .vscode/
+
+# ---- Output ----
+Output/
