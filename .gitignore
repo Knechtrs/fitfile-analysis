@@ -1,0 +1,29 @@
+# ---- R-specific ignores ----
+.Rhistory
+.RData
+.Ruserdata
+.Rproj.user/
+
+# ---- renv-related ignores ----
+renv/library/
+renv/python/
+renv/staging/
+
+# ---- OS-specific ignores ----
+.DS_Store
+Thumbs.db
+
+# ---- Logs and temporary files ----
+*.log
+*.tmp
+*.swp
+*~
+
+# ---- Shiny runtime files ----
+.Rapp.history
+
+# ---- Packrat (if you use it) ----
+packrat/
+
+# ---- VSCode ----
+.vscode/
