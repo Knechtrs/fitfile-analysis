@@ -31,8 +31,8 @@ library(yaml)
 # After adding new packages (use renv::install():
 # renv::snapshot()  # To save current state
 
-# Set your Mapbox token
-set_token("pk.eyJ1Ijoia25lY2h0cnMiLCJhIjoiY21hOWlsbXR1MWd4djJrc2JhYmU3c3VrbCJ9._BxOBVsWVDX9WBEzfIu8Dg")
+# Set your Mapbox token from .Renviron file
+Sys.getenv("MAPBOX_TOKEN")
 
 #-----------------------------#
 # 1. Load and clean .fit data
