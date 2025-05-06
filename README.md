@@ -1,39 +1,85 @@
-# Plots animated gps coordinates from garmin fit files to compare activites/races on the same route.
+# Race Comparison: Animated GPS Plots from Garmin `.fit` Files
 
-## Project Structure
+This project plots animated GPS coordinates from Garmin `.fit` files to compare activities or races on the same route using R.
 
-- `R/` – custom functions
-- `config/` - input variables
-- `figures/` – plotting scripts
-- `data/raw/` – raw input data
-- `data/processed/` – cleaned/processed data
-- `data/plots_rds/` – saved ggplot objects
-- `Output/final_figures/` – final publication-ready plots
-- `Output/temp/` – temporary plots (ignored by git)
-- `scripts/` – analysis scripts
-- `reports/` – knitted reports
-- `renv/` - folder containing installed packages
+---
 
-## Setup
+## 📁 Project Structure
 
-## Version history of scripts
-- v1: initial set-up
-- v2: improved version
- 	- input files and parameters defined in yaml file
-	- takes more than n=2 files as input now
-- v3: functions are now external scripts and loaded via source
-	
+| Folder                  | Description                                  |
+|--------------------------|----------------------------------------------|
+| `R/`                    | Custom R functions                           |
+| `config/`               | Input parameters (e.g., YAML)                |
+| `scripts/`              | Main analysis scripts                        |
+| `reports/`              | Knitted `.html` or `.Rmd` reports            |
+| `figures/`              | Plotting logic                               |
+| `data/raw/`             | Raw `.fit` files (not tracked by Git)        |
+| `data/processed/`       | Cleaned and processed GPS data               |
+| `data/plots_rds/`       | Saved `ggplot` objects for reuse             |
+| `Output/final_figures/` | Final publication-ready plots (e.g., PNGs)   |
+| `Output/temp/`          | Temporary plots (ignored via `.gitignore`)   |
+| `renv/`                 | Environment metadata (auto-managed)          |
 
-## restore version using renv::restore()
+---
 
-## How to run:
-- visit garmin connet website
-- click on activity
-- click on gear icon and export activity
-- open zip.file and load .fit file into data folder
-- select which activites to plot in yaml file
-- open r-project
-- run script: /Users/Raphael/Library/CloudStorage/OneDrive-Charité-UniversitätsmedizinBerlin/Privat/R_fun/Race_comparison/scripts/race_comp_pipeline_v3.R
-- to create gif: record screen and upload to https://ezgif.com/video-to-gif
+##️ Setup Instructions
 
-# NOTE: needs a mapbox account. set your token!
+1. Clone the repository.
+2. Open the R project in RStudio.
+3. If `renv` is not installed, run:
+   ```r
+   install.packages("renv")
+   ```
+4. Restore the exact package versions used:
+   ```r
+   renv::restore()
+   ```
+5. Add your [Mapbox](https://www.mapbox.com/) token to your `.Renviron` or R session:
+   ```r
+   Sys.setenv(MAPBOX_TOKEN = "your_token_here")
+   ```
+
+---
+
+## How to Run
+
+1. Go to the [Garmin Connect website](https://connect.garmin.com/).
+2. Select an activity > click the ⚙️ gear icon > choose **Export as `.fit`**.
+3. Unzip and move the `.fit` file(s) into `data/raw/`.
+4. Open and configure the YAML file in `config/` to select activities to compare.
+5. Run the main pipeline script:
+   ```r
+   source("scripts/race_comp_pipeline_v3.R")
+   ```
+
+### To Create GIFs from Screen Recordings
+
+Use a screen recording tool, then upload the video to:
+[https://ezgif.com/video-to-gif](https://ezgif.com/video-to-gif)
+
+---
+
+## Script Version History
+
+- **v1**: Initial setup
+- **v2**:
+  - YAML-based configuration
+  - Supports >2 `.fit` files
+- **v3**:
+  - Modularized functions moved to `R/`
+  - Code cleaned and reorganized
+
+---
+
+## Requirements
+
+- Mapbox account (free tier is sufficient)
+- Internet connection for tile rendering
+- Garmin `.fit` file exports
+
+---
+
+## Notes
+
+- Raw data is **not tracked in Git**. Place `.fit` files into `data/raw/`.
+- Final plots are generated in `Output/final_figures/`
