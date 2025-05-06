@@ -30,3 +30,6 @@ packrat/
 
 # ---- Output ----
 Output/
+
+#---- Data ----
+data/
