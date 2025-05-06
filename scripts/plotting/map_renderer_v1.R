@@ -3,8 +3,10 @@ render_iatf_map <- function(
     center,
     zoom = 10,
     pitch = 45,
+    mapStyle = "outdoors",
     trail_length = 100,
     stroke_width = 100,
+    stroke_widthPath = 20,
     animation_speed = 500,
     trips_palette = "viridis",
     trips_palette_range = 1:150,
@@ -23,8 +25,16 @@ render_iatf_map <- function(
   }
 
   # Create the map with both trips animation and path layers
-  mapdeck(style = mapdeck_style("light"),
+  mapdeck(style = mapdeck_style(mapStyle),
           location = center, zoom = zoom, pitch = pitch) %>%
+    add_path(
+      data = data_path,
+      stroke_colour = "trip_id",
+      palette = colourvalues::get_palette(path_palette)[path_palette_range, ],
+      stroke_width = stroke_widthPath,
+      layer_id = "path_layer",
+      legend = FALSE
+    ) %>% 
     add_trips(
       data = data,
       stroke_colour = "trip_id",
@@ -35,13 +45,6 @@ render_iatf_map <- function(
       layer_id = "trips_layer",
       legend = TRUE,
       legend_options = list(title = legend_title)
-    ) %>%
-    add_path(
-      data = data_path,
-      stroke_colour = "trip_id",
-      palette = colourvalues::get_palette(path_palette)[path_palette_range, ],
-      stroke_width = 5,
-      layer_id = "path_layer",
-      legend = FALSE
     )
+   
 }

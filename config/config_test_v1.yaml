@@ -1,7 +1,3 @@
 fit_data:
-- file: 17420650556_ACTIVITY.fit
-  trip_id: '17420650556_ACTIVITY'
-- file: 18139073632_ACTIVITY.fit
-  trip_id: '18139073632_ACTIVITY'
-- file: '18077597590_ACTIVITY.fit'
-  trip_id: "18077597590_ACTIVITY"
+- file: Innsbruck_Trail_Run20250503000036.fit
+  trip_id: 'IATF 110K'

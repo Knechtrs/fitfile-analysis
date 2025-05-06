@@ -39,7 +39,7 @@ source(here("scripts", "plotting", "map_renderer_v1.R"))
 
 
 # Load parameters
-params <- load_param(here("config", "config_IATF_25K_RSK_v1.yaml"))
+params <- load_param(here("config", "config_test_v1.yaml"))
 
 # Read and process FIT files
 fit_dfs <- lapply(params$fit_data, function(entry) {
@@ -56,12 +56,15 @@ center_coords <- compute_center_coords(sf_combined)
 
 render_iatf_map(data = sf_combined,
                 center = center_coords,
-                trail_length = 10,
-                animation_speed = 50,
-                stroke_width = 50,
-                trips_palette_range = 1:250,
-                legend_title = "Test",
-                SinglePath = TRUE,
-                Trip_id = "18077597590_ACTIVITY")
+                mapStyle = "light",
+                trail_length = 400,
+                stroke_width = 200,
+                stroke_widthPath = 100,
+                animation_speed = 2000,
+                trips_palette_range = 150:160,
+                path_palette_range = 200:210,
+                legend_title = "Lauren")
+                # SinglePath = FALSE,
+                # Trip_id = "18077597590_ACTIVITY")
 
 
