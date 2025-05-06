@@ -38,8 +38,19 @@ source(here("scripts", "data_processing", "geometry_utils_v1.R"))
 source(here("scripts", "plotting", "map_renderer_v1.R"))
 
 
-# Load parameters
-params <- load_param(here("config", "config_test_v1.yaml"))
+# Load parameters: per command or interactively
+# command example: Rscript scripts/race_comp_pipeline_v3.R config/config_test_v1.yaml
+args <- commandArgs(trailingOnly = TRUE)
+yaml_file <- if (interactive()) {
+  file.choose()
+} else if (length(args) > 0) {
+  args[1]
+} else {
+  "config/config_default.yaml"
+}
+
+params <- load_param(here::here(yaml_file))
+
 
 # Read and process FIT files
 fit_dfs <- lapply(params$fit_data, function(entry) {
