@@ -68,13 +68,13 @@ center_coords <- compute_center_coords(sf_combined)
 render_iatf_map(data = sf_combined,
                 center = center_coords,
                 mapStyle = "light",
-                trail_length = 400,
-                stroke_width = 200,
-                stroke_widthPath = 100,
-                animation_speed = 2000,
-                trips_palette_range = 150:160,
+                trail_length = 100,
+                stroke_width = 150,
+                stroke_widthPath = 50,
+                animation_speed = 500,
+                trips_palette_range = 0:130,
                 path_palette_range = 200:210,
-                legend_title = "")
+                legend_title = "IATF")
                 # SinglePath = FALSE,
                 # Trip_id = "18077597590_ACTIVITY")
 

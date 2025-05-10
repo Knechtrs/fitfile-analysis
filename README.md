@@ -1,85 +1,100 @@
 # Race Comparison: Animated GPS Plots from Garmin `.fit` Files
 
-This project plots animated GPS coordinates from Garmin `.fit` files to compare activities or races on the same route using R.
+[![License: CC BY-NC 4.0](https://licensebuttons.net/l/by-nc/4.0/88x31.png)](https://creativecommons.org/licenses/by-nc/4.0/)
+
+This project visualizes and compares GPS tracks from Garmin `.fit` files in an interactive, animated map. It's built with R and integrates `mapdeck`, `sf`, and `FITfileR` for geospatial rendering.
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 | Folder                  | Description                                  |
-|--------------------------|----------------------------------------------|
-| `R/`                    | Custom R functions                           |
-| `config/`               | Input parameters (e.g., YAML)                |
-| `scripts/`              | Main analysis scripts                        |
-| `reports/`              | Knitted `.html` or `.Rmd` reports            |
-| `figures/`              | Plotting logic                               |
-| `data/raw/`             | Raw `.fit` files (not tracked by Git)        |
-| `data/processed/`       | Cleaned and processed GPS data               |
-| `data/plots_rds/`       | Saved `ggplot` objects for reuse             |
-| `Output/final_figures/` | Final publication-ready plots (e.g., PNGs)   |
-| `Output/temp/`          | Temporary plots (ignored via `.gitignore`)   |
-| `renv/`                 | Environment metadata (auto-managed)          |
+|------------------------|----------------------------------------------|
+| `R/`                   | Custom R functions                           |
+| `config/`              | Input parameters (YAML)                      |
+| `scripts/`             | Main pipeline scripts                        |
+| `data/raw/`            | Input `.fit` files (ignored by Git)          |
+| `Output/`              | Final and temporary output plots             |
+| `renv/`                | R environment metadata (auto-managed)        |
 
 ---
 
-##️ Setup Instructions
+## Setup Instructions
 
-1. Clone the repository.
-2. Open the R project in RStudio.
-3. If `renv` is not installed, run:
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/knechtrs/race-comparison-fit.git
+   ```
+2. Open the `.Rproj` file in RStudio.
+3. Install `renv` if needed:
    ```r
    install.packages("renv")
    ```
-4. Restore the exact package versions used:
+4. Restore the environment:
    ```r
    renv::restore()
    ```
-5. Add your [Mapbox](https://www.mapbox.com/) token to your `.Renviron` or R session:
+5. Add your [Mapbox](https://www.mapbox.com/) token:
    ```r
    Sys.setenv(MAPBOX_TOKEN = "your_token_here")
    ```
 
 ---
 
-## How to Run
+## How to Use
 
-1. Go to the [Garmin Connect website](https://connect.garmin.com/).
-2. Select an activity > click the ⚙️ gear icon > choose **Export as `.fit`**.
-3. Unzip and move the `.fit` file(s) into `data/raw/`.
-4. Open and configure the YAML file in `config/` to select activities to compare.
-5. Run the main pipeline script:
+1. Export `.fit` files from [Garmin Connect](https://connect.garmin.com/).
+2. Move them into the `data/raw/` folder.
+3. Configure the `config/*.yaml` file to define the activities:
+   ```yaml
+   fit_data:
+     - file: your_fit_file.fit
+       trip_id: 'Race 2025'
+   ```
+4. Run the main script:
    ```r
    source("scripts/race_comp_pipeline_v3.R")
    ```
 
-### To Create GIFs from Screen Recordings
-
-Use a screen recording tool, then upload the video to:
-[https://ezgif.com/video-to-gif](https://ezgif.com/video-to-gif)
-
 ---
 
-## Script Version History
+## Output
 
-- **v1**: Initial setup
-- **v2**:
-  - YAML-based configuration
-  - Supports >2 `.fit` files
-- **v3**:
-  - Modularized functions moved to `R/`
-  - Code cleaned and reorganized
+- Animated trip overlays via `mapdeck::add_trips()`
+- Interactive paths using `mapdeck::add_path()`
+- Final visualizations are saved in `Output/final_figures/` (optionally exported manually)
 
 ---
 
 ## Requirements
 
-- Mapbox account (free tier is sufficient)
-- Internet connection for tile rendering
-- Garmin `.fit` file exports
+- R ≥ 4.0
+- Garmin `.fit` files
+- Mapbox token
+- Internet connection for map rendering
 
 ---
 
-## Notes
+## License
 
-- Raw data is **not tracked in Git**. Place `.fit` files into `data/raw/`.
-- Final plots are generated in `Output/final_figures/`
+This project is licensed under the **Creative Commons Attribution-NonCommercial 4.0 International (CC BY-NC 4.0)** license.  
+You are free to use and adapt the code **for non-commercial purposes** with proper attribution.
+
+[Full License Text](https://creativecommons.org/licenses/by-nc/4.0/legalcode)  
+© 2025 Raphael Knecht
+
+---
+
+## Citation (Optional)
+
+If you use this project in research or publications, please cite it as:
+
+```
+Knecht, R. (2025). Race Comparison: Animated GPS Plots from Garmin .fit Files (Version 1.0). GitHub. https://github.com/knechtrs/race-comparison-fit
+```
+
+---
+
+## Questions or Feedback?
+
+Open an [issue](https://github.com/knechtrs/race-comparison-fit/issues) or reach out via the repository discussion board.
