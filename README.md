@@ -66,6 +66,10 @@ This project visualizes and compares GPS tracks from Garmin `.fit` files in an i
 
 ---
 
+Here is an example GIF:
+
+![My Example GIF](assets/example_output.gif)
+
 ## Requirements
 
 - R ≥ 4.0
