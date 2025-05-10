@@ -32,10 +32,10 @@ library(yaml)
 Sys.getenv("MAPBOX_TOKEN")
 
 # load functions
-source(here("scripts", "utilities", "config_loader_v1.R"))
-source(here("scripts", "data_processing", "fit_reader_v1.R"))
-source(here("scripts", "data_processing", "geometry_utils_v1.R"))
-source(here("scripts", "plotting", "map_renderer_v1.R"))
+source(here("scripts", "utilities", "config_loader.R"))
+source(here("scripts", "data_processing", "fit_reader.R"))
+source(here("scripts", "data_processing", "geometry_utils.R"))
+source(here("scripts", "plotting", "map_renderer.R"))
 
 
 # Load parameters: per command or interactively
@@ -74,7 +74,7 @@ render_iatf_map(data = sf_combined,
                 animation_speed = 2000,
                 trips_palette_range = 150:160,
                 path_palette_range = 200:210,
-                legend_title = "Lauren")
+                legend_title = "")
                 # SinglePath = FALSE,
                 # Trip_id = "18077597590_ACTIVITY")
 
