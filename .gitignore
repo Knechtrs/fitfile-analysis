@@ -33,3 +33,6 @@ Output/
 
 #---- Data ----
 data/
+
+#---- config ----
+config/
