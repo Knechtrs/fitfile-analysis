@@ -69,7 +69,7 @@ Here is an example GIF:
 
 ![My Example GIF](assets/example_output.gif)
 
-[View Interactive Output](https://github.com/Knechtrs/fitfile-analysis/assets/example_output.html)
+[View Interactive Output](https://github.com/Knechtrs/fitfile-analysis/example_output.html)
 
 ## Requirements
 
