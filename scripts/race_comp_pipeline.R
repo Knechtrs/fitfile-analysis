@@ -52,7 +52,7 @@ yaml_file <- if (interactive()) {
 params <- load_param(here::here(yaml_file))
 
 # if you want to remove certain files
-params$fit_data <- params$fit_data[-1]
+# params$fit_data <- params$fit_data[-1]
 
 
 # Read and process FIT files
