@@ -1,0 +1,8 @@
+fit_data:
+- file: 2023_k25_lenni.fit
+  trip_id: '2023'
+- file: 2024_k25_lenni.fit
+  trip_id: '2024'
+  start_time: 2024-05-04 09:36:18
+- file: 2025_k25_lenni.fit
+  trip_id: '2025'
