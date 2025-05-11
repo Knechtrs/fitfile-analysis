@@ -1,4 +1,4 @@
-# Race Comparison: Animated GPS Plots from Garmin `.fit` Files
+# Race Comparison: Animated GPS Plots from `.fit` Files
 
 [![License: CC BY-NC 4.0](https://licensebuttons.net/l/by-nc/4.0/88x31.png)](https://creativecommons.org/licenses/by-nc/4.0/)
 
@@ -72,7 +72,7 @@ Here is an example GIF:
 ## Requirements
 
 - R ≥ 4.0
-- Garmin `.fit` files
+- `.fit` files
 - Mapbox token
 - Internet connection for map rendering
 
@@ -93,7 +93,7 @@ You are free to use and adapt the code **for non-commercial purposes** with prop
 If you use this project in research or publications, please cite it as:
 
 ```
-Knecht, R. (2025). Race Comparison: Animated GPS Plots from Garmin .fit Files (Version 1.0). GitHub. https://github.com/knechtrs/race-comparison-fit
+Knecht, R. (2025). Race Comparison: Animated GPS Plots from .fit Files (Version 1.0). GitHub. https://github.com/knechtrs/race-comparison-fit
 ```
 
 ---
