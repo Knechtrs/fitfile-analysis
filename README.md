@@ -69,6 +69,8 @@ Here is an example GIF:
 
 ![My Example GIF](assets/example_output.gif)
 
+[View Interactive Output](https://github.com/Knechtrs/fitfile-analysis/assets/example_output.html)
+
 ## Requirements
 
 - R ≥ 4.0
