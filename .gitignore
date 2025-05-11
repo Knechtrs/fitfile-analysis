@@ -35,4 +35,5 @@ Output/
 data/
 
 #---- config ----
-config/
+config/*
+!config/config_example.yaml

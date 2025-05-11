@@ -1,0 +1,6 @@
+fit_data:
+- file: myfile1.fit
+  trip_id: 'run1'
+  start_time: 2024-05-04 09:30:55 # time of race start: if watch started tracking earlier than race
+- file: myfile2.fit
+  trip_id: 'run2'
