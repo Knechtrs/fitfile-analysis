@@ -62,7 +62,6 @@ This project visualizes and compares GPS tracks from Garmin `.fit` files in an i
 
 - Animated trip overlays via `mapdeck::add_trips()`
 - Interactive paths using `mapdeck::add_path()`
-- Final visualizations are saved in `Output/final_figures/` (optionally exported manually)
 
 ---
 
