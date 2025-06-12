@@ -68,7 +68,7 @@ sf_combined <- bind_rows(map(fit_dfs, extend_linestring_from_df, target_m_max = 
 # Center + visualize
 center_coords <- compute_center_coords(sf_combined)
 
-render_iatf_map(data = sf_combined,
+map_output <- render_iatf_map(data = sf_combined,
                 center = center_coords,
                 mapStyle = "light",
                 trail_length = 100,
@@ -81,4 +81,4 @@ render_iatf_map(data = sf_combined,
                 # SinglePath = FALSE,
                 # Trip_id = "18077597590_ACTIVITY")
 
-
+print(map_output)
