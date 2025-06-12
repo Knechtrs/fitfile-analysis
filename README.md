@@ -26,7 +26,7 @@ This project visualizes and compares GPS tracks from Garmin `.fit` files in an i
    git clone https://github.com/knechtrs/fitfile-analysis.git
    ```
 2. Open the `.Rproj` file in RStudio.
-3. Install `renv` if needed:
+3. Install `renv`:
    ```r
    install.packages("renv")
    ```
@@ -43,18 +43,22 @@ This project visualizes and compares GPS tracks from Garmin `.fit` files in an i
 
 ## How to Use
 
-1. Export `.fit` files from [Garmin Connect](https://connect.garmin.com/).
-2. Create `data/raw/` folder and move .fit files there.
+1. Export `.fit` files from [Garmin Connect](https://connect.garmin.com/) or from any other device that let's you export `.fit` files.
+2. Create `data/raw/` folder and move `.fit` files there.
 3. Configure the `config/*.yaml` file to define the activities:
    ```yaml
    fit_data:
      - file: your_fit_file.fit
        trip_id: 'Race 2025'
+   
    ```
-4. Run the main script:
+      * Note: your yaml file should have a empty line at the end!
+4. Run the main script in the console:
    ```r
-   source("scripts/race_comp_pipeline_v3.R")
+   source("scripts/race_comp_pipeline.R")
    ```
+   or alternatively open "race_comp_pipeline.R" in R studio and run the whole script
+5. The animated race should show up in the viewer tab. 
 
 ---
 
