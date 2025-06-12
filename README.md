@@ -43,22 +43,49 @@ This project visualizes and compares GPS tracks from Garmin `.fit` files in an i
 
 ## How to Use
 
-1. Export `.fit` files from [Garmin Connect](https://connect.garmin.com/) or from any other device that let's you export `.fit` files.
-2. Create `data/raw/` folder and move `.fit` files there.
-3. Configure the `config/*.yaml` file to define the activities:
-   ```yaml
-   fit_data:
-     - file: your_fit_file.fit
-       trip_id: 'Race 2025'
-   
-   ```
-      * Note: your yaml file should have a empty line at the end!
-4. Run the main script in the console:
-   ```r
-   source("scripts/race_comp_pipeline.R")
-   ```
-   or alternatively open "race_comp_pipeline.R" in R studio and run the whole script
-5. The animated race should show up in the viewer tab. 
+##  How to Run the Race Comparison Animation
+
+Follow these steps to visualize your `.fit` files as an animated race map:
+
+### 1. Export Your `.fit` Files
+
+Export `.fit` activity files from [Garmin Connect](https://connect.garmin.com/) or any other device that supports `.fit` file export.
+
+### 2. Prepare the Data Folder
+
+Create a folder named `data/raw/` in your project directory and move all your `.fit` files into it:
+
+```bash
+mkdir -p data/raw
+# move your .fit files into data/raw/
+```
+
+### 3. Configure the YAML File
+
+Edit the configuration file inside the `config/` folder to define which `.fit` files to include and how they should be labeled. For example:
+
+```yaml
+fit_data:
+  - file: your_fit_file.fit
+    trip_id: "Race 2025"
+```
+
+ **Note:** Make sure the YAML file ends with an empty line (i.e., a newline at the end of the file). Some YAML parsers require this to avoid parsing errors.
+
+### 4. Run the Script
+
+Run the main pipeline script in your R console:
+
+```r
+source("scripts/race_comp_pipeline.R")
+```
+
+Alternatively, you can open `race_comp_pipeline.R` in RStudio and run the entire script interactively.
+
+### 5. View the Animation
+
+Once the script finishes, an animated map of the race will appear in RStudio’s **Viewer** tab.
+
 
 ---
 
