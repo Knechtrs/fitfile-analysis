@@ -44,7 +44,7 @@ This project visualizes and compares GPS tracks from Garmin `.fit` files in an i
 ## How to Use
 
 1. Export `.fit` files from [Garmin Connect](https://connect.garmin.com/).
-2. Move them into the `data/raw/` folder.
+2. Create `data/raw/` folder and move .fit files there.
 3. Configure the `config/*.yaml` file to define the activities:
    ```yaml
    fit_data:
