@@ -54,8 +54,7 @@ Export `.fit` activity files from [Garmin Connect](https://connect.garmin.com/) 
 Create a folder named `data/raw/` in your project directory and move all your `.fit` files into it:
 
 ```bash
-mkdir -p data/raw
-# move your .fit files into data/raw/
+mkdir -p fitfile-analysis/data/raw
 ```
 
 ### 3. Configure the YAML File
