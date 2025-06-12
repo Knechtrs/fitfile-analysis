@@ -76,8 +76,9 @@ Run the main pipeline script in your R console:
 ```r
 source("scripts/race_comp_pipeline.R")
 ```
+An interactive file selection window will open. Navigate to the `config/` folder and select your `.yaml` configuration file.
 
-Alternatively, you can open `race_comp_pipeline.R` in RStudio and run the entire script interactively.
+Note: Alternatively, you can open `race_comp_pipeline.R` in RStudio and run the entire script interactively.
 
 ### 5. View the Animation
 
