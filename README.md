@@ -41,8 +41,6 @@ This project visualizes and compares GPS tracks from Garmin `.fit` files in an i
 
 ---
 
-## How to Use
-
 ##  How to Run the Race Comparison Animation
 
 Follow these steps to visualize your `.fit` files as an animated race map:
