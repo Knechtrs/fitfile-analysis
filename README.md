@@ -23,7 +23,7 @@ This project visualizes and compares GPS tracks from Garmin `.fit` files in an i
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/knechtrs/race-comparison-fit.git
+   git clone https://github.com/knechtrs/fitfile-analysis.git
    ```
 2. Open the `.Rproj` file in RStudio.
 3. Install `renv` if needed:
